@@ -4,6 +4,8 @@ Demo of [Cursor](https://cursor.sh/), a VSCode fork with GPT-4 integration.
 
 ## Commands
 
+Create `dell_cursor_demo/process.py`.
+
 ```
 Write a python script that accepts and input dir and and output dir and does the following:
 * Finds all JSON files in the input dir.
@@ -15,13 +17,19 @@ Write a python script that accepts and input dir and and output dir and does the
 Use a tqdm bar to indicate progress. Raise NotADirectoryError if any of the given dirs do not exist. Raise a FileNotFoundError if you find no JSONs in the input dir.
 ```
 
+Create `tests/test_process.py`.
+
 ```
 Write unit tests for @process_jsons
 ```
 
+In `dell_cursor_demo/process.py`:
+
 ```
 Write a CLI interface for process_jsons
 ```
+
+Chat
 
 ```
 What does process_jsons do?
@@ -30,6 +38,8 @@ What does process_jsons do?
 ```
 Give me some examples of how it will transform the "name" key into a directory name
 ```
+
+CLI
 
 ```
 Find all .json files in the output dir and print only their parent directory name
