@@ -1,34 +1,36 @@
-# Python Template
+# Dell Cursor Demo
 
-Template repository for Python projects. Uses [pdm](https://github.com/pdm-project/pdm) as the package manager.
+Demo of [Cursor](https://cursor.sh/), a VSCode fork with GPT-4 integration.
 
-## Usage
+## Commands
 
-1. Rename [project](./project) to the desired project name
-2. Update the `$PROJECT` variable in [Makefile](./Makefile) to match step 1
-3. Run `pdm init` to configure [pyproject.toml](./pyproject.toml)
-4. Add source code to the renamed `project` folder
-5. Run `make init` to install the project to a `pdm` virtual environment
-6. You can execute commands from the `pdm` environment with `pdm run`
+```
+Write a python script that accepts and input dir and and output dir and does the following:
+* Finds all JSON files in the input dir.
+* Reads each JSON file
+* Extract the field "name" which contains full names in style "First M Last" or "First Last"
+* Pop the "name" field and make sure that the name does not appear in any other field in the JSON
+* Save the updated JSON to the output dir using the extracted "name". The output file should be saved in a subdir as style LAST^FIRST^M/report.json or LAST^FIRST/report.json, where ^ is a separator and the name components are all capitalized.
 
-## Recipes
-* `make style` - Runs code style formatting
-* `make quality` - Tests that code complies with quality standards
-* `make types` - Run static type checking with [pyright](https://github.com/microsoft/pyright)
-* `make test` - Run unit tests
-* `make test-pdb-*` - Run unit tests matching pattern `*` with fallback to [`pdb`](https://docs.python.org/3/library/pdb.html)
-  for debugging.
-* `make deploy` - Install dependencies from `pdm` lockfile
+Use a tqdm bar to indicate progress. Raise NotADirectoryError if any of the given dirs do not exist. Raise a FileNotFoundError if you find no JSONs in the input dir.
+```
 
-## Optional steps
-* Setup CI - a template CircleCI config is provided in `.circeci/config.yml`
-* Create `config.mk` - secrets or per-user configuration can go here.
-  Template `config.mk.example` is under version control, but `config.mk`
-  is in `.gitignore`. Add `$(CONFIG_FILE)` as a make dependencies for recipes that
-  need vars from `config.mk`.
+```
+Write unit tests for @process_jsons
+```
 
-## Misc
+```
+Write a CLI interface for process_jsons
+```
 
-* Run `make help` to get a partial list of available make recipes
-* A pytest mark, `ci_skip`, is provided to mark tests that should be skipped 
-  during CI pipelines
+```
+What does process_jsons do?
+```
+
+```
+Give me some examples of how it will transform the "name" key into a directory name
+```
+
+```
+Find all .json files in the output dir and print only their parent directory name
+```
