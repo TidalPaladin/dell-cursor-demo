@@ -29,6 +29,12 @@ In `dell_cursor_demo/process.py`:
 Write a CLI interface for process_jsons
 ```
 
+Run the CLI tool on the `data` directory.
+
+```bash
+pdm run python dell_cursor_demo/process.py data/ output/
+```
+
 Chat
 
 ```
